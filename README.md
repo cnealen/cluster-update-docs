@@ -4,9 +4,9 @@ This repository contains documentation and diagrams for the development cluster 
 
 ## 📊 Diagram
 
-![Cluster Update Process](docs/cluster_update_process.svg)
+![Cluster Update Process](cluster_update_process.svg)
 
-The main process diagram is located at `docs/cluster_update_process.svg` and can be viewed directly in GitHub.
+The main process diagram is located at [cluster_update_process.drawio](cluster_update_process.drawio) and can be edited with [draw.io](https://app.diagrams.net/). A rendered SVG version is also available at [cluster_update_process.svg](cluster_update_process.svg) for viewing directly in GitHub.
 
 ## 🔄 Workflow Overview
 
@@ -49,8 +49,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on updating the diagram.
 
 ## 📚 Documentation
 
-- [Diagram Editing Guide](docs/EDITING.md) - How to modify the SVG diagram
-- [Update Checklist](docs/CHECKLIST.md) - Step-by-step update procedure
+- [Diagram Editing Guide](EDITING.md) - How to modify the diagram using draw.io
+- [Update Checklist](CHECKLIST.md) - Step-by-step update procedure
 
 ---
 
