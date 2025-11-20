@@ -1,0 +1,50 @@
+# <type>: <subject>
+# |<----  Using a Maximum Of 50 Characters  ---->|
+
+# Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# Provide links or keys to any relevant tickets, articles or other resources
+
+# --- COMMIT END ---
+# Type can be:
+#    feat     (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    style    (formatting, spacing, layout)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating build tasks, dependencies, etc; no production code change)
+# --------------------
+# Remember to:
+#   - Capitalize the subject line
+#   - Use the imperative mood in the subject line
+#   - Do not end the subject line with a period
+#   - Separate subject from body with a blank line
+#   - Use the body to explain what and why vs. how
+#   - Can use multiple lines with "-" for bullet points in body
+# --------------------
+# Examples:
+#
+# feat: add validation step before container build
+#
+# The cluster was experiencing crashes when multiple containers
+# were built simultaneously. Added a validation step that checks
+# for active builds before proceeding.
+#
+# Relates to issue #42
+#
+# --------------------
+#
+# fix: correct arrow alignment between steps 7 and 8
+#
+# The arrow was pointing to the wrong Y coordinate, making the
+# flow diagram confusing. Updated the path coordinates to align
+# with the center of step 8.
+#
+# --------------------
+#
+# docs: update command list with new Singularity syntax
+#
+# Singularity v3.8 changed the build command syntax. Updated
+# the commands in the side panel to reflect current best practices.

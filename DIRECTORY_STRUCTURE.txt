@@ -1,0 +1,14 @@
+.
+|____.github
+| |____PULL_REQUEST_TEMPLATE.md
+|____.gitignore
+|____.gitmessage
+|____CONTRIBUTING.md
+|____DIRECTORY_STRUCTURE.txt
+|____README.md
+|____SETUP.md
+|____docs
+| |____CHECKLIST.md
+| |____EDITING.md
+| |____QUICK_REFERENCE.md
+| |____cluster_update_process.svg

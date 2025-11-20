@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="1850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .process-box { fill: #E8F4F8; stroke: #2E86AB; stroke-width: 2; }
+      .decision-box { fill: #FFF3E0; stroke: #FF9800; stroke-width: 2; }
+      .action-box { fill: #E8F5E9; stroke: #4CAF50; stroke-width: 2; }
+      .warning-box { fill: #FFEBEE; stroke: #F44336; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1A1A1A; }
+      .arrow { stroke: #555; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .dashed-arrow { stroke: #999; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead-gray); }
+      .icon-stroke { stroke: #666; stroke-width: 1.5; fill: none; }
+      .icon-fill { fill: #666; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#555"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#999"/>
+    </marker>
+    
+    <!-- Icon Definitions -->
+    <!-- GitLab Icon -->
+    <g id="gitlab-icon">
+      <path d="M 12 2 L 8 10 L 16 10 Z" fill="#E24329"/>
+      <path d="M 8 10 L 4 2 L 0 10 L 8 10 Z" fill="#FC6D26"/>
+      <path d="M 16 10 L 20 2 L 24 10 L 16 10 Z" fill="#FC6D26"/>
+      <path d="M 0 10 L 12 22 L 24 10 L 16 10 L 8 10 Z" fill="#FCA326"/>
+    </g>
+    
+    <!-- Docker Icon -->
+    <g id="docker-icon">
+      <rect x="2" y="8" width="4" height="4" fill="#0db7ed"/>
+      <rect x="7" y="8" width="4" height="4" fill="#0db7ed"/>
+      <rect x="12" y="8" width="4" height="4" fill="#0db7ed"/>
+      <rect x="7" y="3" width="4" height="4" fill="#0db7ed"/>
+      <rect x="12" y="3" width="4" height="4" fill="#0db7ed"/>
+      <path d="M 17 7 C 20 7 22 9 22 12 C 22 16 18 18 14 18 L 4 18 C 1 18 0 16 0 14 C 0 12 1 10 3 10 L 17 10" fill="#0db7ed" opacity="0.7"/>
+    </g>
+    
+    <!-- Terminal Icon -->
+    <g id="terminal-icon">
+      <rect x="0" y="0" width="24" height="18" rx="2" fill="#2D2D2D"/>
+      <text x="2" y="8" font-family="monospace" font-size="8" fill="#0F0">$ _</text>
+      <line x1="2" y1="12" x2="20" y2="12" stroke="#0F0" stroke-width="1"/>
+    </g>
+    
+    <!-- Singularity Icon -->
+    <g id="singularity-icon">
+      <circle cx="12" cy="12" r="10" fill="#1E88E5"/>
+      <path d="M 12 6 L 12 18 M 6 12 L 18 12" stroke="white" stroke-width="2"/>
+      <circle cx="12" cy="12" r="3" fill="white"/>
+    </g>
+    
+    <!-- TAR Archive Icon -->
+    <g id="tar-icon">
+      <rect x="2" y="2" width="20" height="20" rx="2" fill="#795548"/>
+      <rect x="5" y="5" width="14" height="2" fill="#FFF"/>
+      <rect x="5" y="9" width="14" height="2" fill="#FFF"/>
+      <rect x="5" y="13" width="14" height="2" fill="#FFF"/>
+      <rect x="5" y="17" width="10" height="2" fill="#FFF"/>
+    </g>
+    
+    <!-- SIF File Icon -->
+    <g id="sif-icon">
+      <rect x="2" y="2" width="16" height="20" rx="2" fill="#4CAF50"/>
+      <path d="M 18 2 L 18 7 L 13 7 Z" fill="#388E3C"/>
+      <text x="10" y="16" text-anchor="middle" font-size="8" fill="white" font-weight="bold">SIF</text>
+    </g>
+    
+    <!-- Workflow UI Icon -->
+    <g id="workflow-icon">
+      <rect x="0" y="0" width="24" height="20" rx="2" fill="#F5F5F5" stroke="#999"/>
+      <rect x="2" y="2" width="20" height="3" fill="#2196F3"/>
+      <circle cx="5" cy="9" r="2" fill="#4CAF50"/>
+      <circle cx="12" cy="9" r="2" fill="#FF9800"/>
+      <circle cx="19" cy="9" r="2" fill="#4CAF50"/>
+      <path d="M 5 11 L 12 11 L 19 11" stroke="#999" stroke-width="1"/>
+    </g>
+    
+    <!-- Storage Icon -->
+    <g id="storage-icon">
+      <rect x="2" y="2" width="20" height="5" rx="1" fill="#607D8B"/>
+      <rect x="2" y="9" width="20" height="5" rx="1" fill="#607D8B"/>
+      <rect x="2" y="16" width="20" height="5" rx="1" fill="#607D8B"/>
+      <circle cx="19" cy="4.5" r="1" fill="#4CAF50"/>
+      <circle cx="19" cy="11.5" r="1" fill="#4CAF50"/>
+      <circle cx="19" cy="18.5" r="1" fill="#4CAF50"/>
+    </g>
+    
+    <!-- Registry Icon -->
+    <g id="registry-icon">
+      <rect x="4" y="2" width="16" height="20" rx="2" fill="#9C27B0"/>
+      <rect x="7" y="5" width="10" height="3" fill="white"/>
+      <rect x="7" y="10" width="10" height="3" fill="white"/>
+      <rect x="7" y="15" width="10" height="3" fill="white"/>
+    </g>
+    
+    <!-- User Check Icon -->
+    <g id="user-check-icon">
+      <circle cx="10" cy="8" r="4" fill="#2196F3"/>
+      <path d="M 4 20 C 4 16 7 14 10 14 C 13 14 16 16 16 20" fill="#2196F3"/>
+      <circle cx="18" cy="18" r="5" fill="#4CAF50"/>
+      <path d="M 16 18 L 17.5 19.5 L 20 17" stroke="white" stroke-width="1.5" fill="none"/>
+    </g>
+    
+    <!-- Clean Icon -->
+    <g id="clean-icon">
+      <circle cx="12" cy="12" r="10" fill="#FF5722"/>
+      <path d="M 8 12 L 16 12 M 12 8 L 12 16" stroke="white" stroke-width="2" transform="rotate(45 12 12)"/>
+    </g>
+    
+    <!-- Warning Icon -->
+    <g id="warning-icon">
+      <path d="M 12 2 L 22 20 L 2 20 Z" fill="#FF9800"/>
+      <text x="12" y="16" text-anchor="middle" font-size="10" fill="white" font-weight="bold">!</text>
+    </g>
+    
+    <!-- Success Icon -->
+    <g id="success-icon">
+      <circle cx="12" cy="12" r="10" fill="#4CAF50"/>
+      <path d="M 8 12 L 11 15 L 16 9" stroke="white" stroke-width="2" fill="none"/>
+    </g>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="40" class="title" text-anchor="middle">Development Cluster Update Process</text>
+  
+  <!-- Step 1: Check Repository Updates -->
+  <rect x="500" y="80" width="340" height="70" rx="5" class="process-box"/>
+  <use href="#gitlab-icon" x="510" y="95" width="24" height="24"/>
+  <text x="670" y="110" class="text" text-anchor="middle">1. Check Repository Updates</text>
+  <text x="670" y="130" class="text" text-anchor="middle">(GitLab - NGEN repo)</text>
+  
+  <path d="M 670 150 L 670 180" class="arrow"/>
+  
+  <!-- Step 2: Check Package Registry -->
+  <rect x="500" y="180" width="340" height="70" rx="5" class="process-box"/>
+  <use href="#registry-icon" x="510" y="195" width="24" height="24"/>
+  <text x="670" y="210" class="text" text-anchor="middle">2. Check Package Registry</text>
+  <text x="670" y="230" class="text" text-anchor="middle">(Verify latest tag exists)</text>
+  
+  <path d="M 670 250 L 670 280" class="arrow"/>
+  
+  <!-- Decision: Pipeline Passing? -->
+  <path d="M 670 280 L 770 320 L 670 360 L 570 320 Z" class="decision-box"/>
+  <use href="#workflow-icon" x="658" y="295" width="24" height="20"/>
+  <text x="670" y="325" class="text" text-anchor="middle">Pipeline</text>
+  <text x="670" y="340" class="text" text-anchor="middle">Passing?</text>
+  
+  <!-- No Path -->
+  <path d="M 570 320 L 380 320" class="arrow"/>
+  <rect x="220" y="290" width="160" height="70" rx="5" class="warning-box"/>
+  <use href="#warning-icon" x="230" y="305" width="20" height="20"/>
+  <text x="300" y="320" class="text" text-anchor="middle">Use commit hash</text>
+  <text x="300" y="340" class="text" text-anchor="middle">instead of 'latest'</text>
+  <path d="M 300 360 L 300 420 L 670 420" class="arrow"/>
+  
+  <!-- Yes Path -->
+  <path d="M 770 320 L 960 320" class="arrow"/>
+  <rect x="960" y="290" width="160" height="70" rx="5" class="action-box"/>
+  <use href="#success-icon" x="970" y="305" width="20" height="20"/>
+  <text x="1040" y="320" class="text" text-anchor="middle">Use 'latest' tag</text>
+  <text x="1040" y="340" class="text" text-anchor="middle">directly</text>
+  <path d="M 1040 360 L 1040 420 L 670 420" class="arrow"/>
+  
+  <!-- Step 3: Verify No Active Sessions -->
+  <rect x="500" y="440" width="340" height="70" rx="5" class="process-box"/>
+  <use href="#user-check-icon" x="510" y="455" width="24" height="24"/>
+  <text x="670" y="470" class="text" text-anchor="middle">3. Verify No Active Sessions</text>
+  <text x="670" y="490" class="text" text-anchor="middle">(Check with users, docker ps)</text>
+  
+  <path d="M 670 510 L 670 540" class="arrow"/>
+  
+  <!-- Step 4: Clean Docker Images -->
+  <rect x="500" y="540" width="340" height="90" rx="5" class="action-box"/>
+  <use href="#clean-icon" x="510" y="555" width="24" height="24"/>
+  <use href="#docker-icon" x="540" y="555" width="24" height="18"/>
+  <text x="670" y="570" class="text" text-anchor="middle">4. Clean Docker Environment</text>
+  <text x="670" y="590" class="text" text-anchor="middle">• docker rmi [old images]</text>
+  <text x="670" y="610" class="text" text-anchor="middle">• docker system prune</text>
+  
+  <path d="M 670 630 L 670 660" class="arrow"/>
+  
+  <!-- Step 5: Pull Docker Image -->
+  <rect x="500" y="660" width="340" height="70" rx="5" class="action-box"/>
+  <use href="#docker-icon" x="510" y="675" width="24" height="18"/>
+  <text x="670" y="690" class="text" text-anchor="middle">5. Pull Docker Image</text>
+  <text x="670" y="710" class="text" text-anchor="middle">(Using commit hash or latest)</text>
+  
+  <path d="M 670 730 L 670 760" class="arrow"/>
+  
+  <!-- Step 6: Tag as Latest -->
+  <rect x="500" y="760" width="340" height="90" rx="5" class="action-box"/>
+  <use href="#docker-icon" x="510" y="775" width="24" height="18"/>
+  <text x="670" y="790" class="text" text-anchor="middle">6. Tag Image as 'latest'</text>
+  <text x="670" y="810" class="text" text-anchor="middle">docker tag [image:hash]</text>
+  <text x="670" y="830" class="text" text-anchor="middle">[image:latest]</text>
+  
+  <path d="M 670 850 L 670 880" class="arrow"/>
+  
+  <!-- Step 7: Build Singularity Container -->
+  <rect x="500" y="880" width="340" height="90" rx="5" class="action-box"/>
+  <use href="#singularity-icon" x="510" y="895" width="24" height="24"/>
+  <use href="#tar-icon" x="540" y="895" width="20" height="20"/>
+  <use href="#sif-icon" x="565" y="895" width="20" height="22"/>
+  <text x="670" y="910" class="text" text-anchor="middle">7. Build Singularity Container</text>
+  <text x="670" y="930" class="text" text-anchor="middle">• Create TAR archive</text>
+  <text x="670" y="950" class="text" text-anchor="middle">• Build .sif file</text>
+  
+  <path d="M 670 970 L 670 1000" class="arrow"/>
+  
+  <!-- Warning Note -->
+  <rect x="100" y="900" width="280" height="70" rx="5" class="warning-box"/>
+  <use href="#warning-icon" x="110" y="915" width="20" height="20"/>
+  <text x="240" y="930" class="text" text-anchor="middle">⚠️ Build one container at a time</text>
+  <text x="240" y="950" class="text" text-anchor="middle">(Parallel builds crash cluster)</text>
+  <path d="M 380 935 L 500 920" class="dashed-arrow"/>
+  
+  <!-- Step 8: Update Downstream Repos -->
+  <rect x="500" y="1000" width="340" height="110" rx="5" class="action-box"/>
+  <use href="#gitlab-icon" x="510" y="1015" width="24" height="24"/>
+  <text x="670" y="1030" class="text" text-anchor="middle">8. Update Downstream Repos</text>
+  <text x="670" y="1050" class="text" text-anchor="middle">• Account Manager</text>
+  <text x="670" y="1070" class="text" text-anchor="middle">• Forecast Manager</text>
+  <text x="670" y="1090" class="text" text-anchor="middle">• NWM Verf</text>
+  
+  <path d="M 670 1110 L 670 1140" class="arrow"/>
+  
+  <!-- Step 9: Update UI and Server -->
+  <rect x="500" y="1140" width="340" height="70" rx="5" class="action-box"/>
+  <use href="#terminal-icon" x="510" y="1155" width="24" height="18"/>
+  <text x="670" y="1170" class="text" text-anchor="middle">9. Update UI and Server</text>
+  <text x="670" y="1190" class="text" text-anchor="middle">(build_cluster.sh script)</text>
+  
+  <path d="M 670 1210 L 670 1240" class="arrow"/>
+  
+  <!-- Decision: All Builds Successful? -->
+  <path d="M 670 1240 L 770 1280 L 670 1320 L 570 1280 Z" class="decision-box"/>
+  <text x="670" y="1275" class="text" text-anchor="middle">All Builds</text>
+  <text x="670" y="1295" class="text" text-anchor="middle">Successful?</text>
+  
+  <!-- No Path -->
+  <path d="M 570 1280 L 380 1280" class="arrow"/>
+  <rect x="220" y="1250" width="160" height="70" rx="5" class="warning-box"/>
+  <use href="#warning-icon" x="230" y="1265" width="20" height="20"/>
+  <text x="300" y="1280" class="text" text-anchor="middle">Troubleshoot</text>
+  <text x="300" y="1300" class="text" text-anchor="middle">Failed Builds</text>
+  
+  <!-- Yes Path -->
+  <path d="M 670 1320 L 670 1360" class="arrow"/>
+  
+  <!-- Step 10: Run Workflow -->
+  <rect x="500" y="1360" width="340" height="90" rx="5" class="action-box"/>
+  <use href="#workflow-icon" x="510" y="1375" width="24" height="20"/>
+  <text x="670" y="1390" class="text" text-anchor="middle">10. Run Deployment Workflow</text>
+  <text x="670" y="1410" class="text" text-anchor="middle">(Parallel Works Platform)</text>
+  <text x="670" y="1430" class="text" text-anchor="middle">Format: ngen_cerf_rtx_dev</text>
+  
+  <path d="M 670 1450 L 670 1490" class="arrow"/>
+  
+  <!-- Complete -->
+  <rect x="525" y="1490" width="290" height="70" rx="10" class="action-box"/>
+  <use href="#success-icon" x="535" y="1505" width="24" height="24"/>
+  <text x="670" y="1520" class="text" text-anchor="middle" font-weight="bold">Cluster Update Complete</text>
+  <text x="670" y="1540" class="text" text-anchor="middle">✓ Development cluster updated</text>
+  
+  <!-- Side Notes with Icons -->
+  <g transform="translate(950, 500)">
+    <rect x="0" y="0" width="320" height="240" rx="5" fill="#F5F5F5" stroke="#999" stroke-width="1"/>
+    <use href="#terminal-icon" x="10" y="10" width="20" height="15"/>
+    <text x="160" y="25" class="text" text-anchor="middle" font-weight="bold">Key Commands</text>
+    <text x="10" y="50" class="text" font-family="monospace" font-size="12">git fetch origin</text>
+    <text x="10" y="70" class="text" font-family="monospace" font-size="12">docker images</text>
+    <text x="10" y="90" class="text" font-family="monospace" font-size="12">docker ps -a</text>
+    <text x="10" y="110" class="text" font-family="monospace" font-size="12">docker pull [image]</text>
+    <text x="10" y="130" class="text" font-family="monospace" font-size="12">docker tag [old] [new]</text>
+    <text x="10" y="150" class="text" font-family="monospace" font-size="12">docker system prune</text>
+    <text x="10" y="170" class="text" font-family="monospace" font-size="12">build_cluster.sh</text>
+    <text x="10" y="190" class="text" font-family="monospace" font-size="12">singularity build</text>
+    <text x="10" y="210" class="text" font-family="monospace" font-size="12">git stash save/pop</text>
+  </g>
+  
+  <g transform="translate(950, 760)">
+    <rect x="0" y="0" width="320" height="200" rx="5" fill="#FFF8E1" stroke="#FFA726" stroke-width="1"/>
+    <use href="#warning-icon" x="10" y="10" width="20" height="20"/>
+    <text x="160" y="25" class="text" text-anchor="middle" font-weight="bold">Important Notes</text>
+    <text x="10" y="50" class="text" font-size="12">• Always verify no active sessions</text>
+    <text x="10" y="70" class="text" font-size="12">• Build containers sequentially</text>
+    <text x="10" y="90" class="text" font-size="12">• Tag images as 'latest' for scripts</text>
+    <text x="10" y="110" class="text" font-size="12">• Clean up to prevent disk issues</text>
+    <text x="10" y="130" class="text" font-size="12">• Check pipeline status first</text>
+    <text x="10" y="150" class="text" font-size="12">• Use commit hash if tests fail</text>
+    <text x="10" y="170" class="text" font-size="12">• Coordinate with team members</text>
+  </g>
+  
+  <!-- Technology Stack Legend -->
+  <g transform="translate(950, 980)">
+    <rect x="0" y="0" width="320" height="260" rx="5" fill="#E8F4F8" stroke="#2E86AB" stroke-width="1"/>
+    <text x="160" y="25" class="text" text-anchor="middle" font-weight="bold">Technology Stack</text>
+    
+    <use href="#docker-icon" x="20" y="45" width="24" height="18"/>
+    <text x="55" y="58" class="text" font-size="12">Docker - Container platform</text>
+    
+    <use href="#singularity-icon" x="20" y="75" width="24" height="24"/>
+    <text x="55" y="92" class="text" font-size="12">Singularity - HPC containers</text>
+    
+    <use href="#gitlab-icon" x="20" y="110" width="24" height="24"/>
+    <text x="55" y="127" class="text" font-size="12">GitLab - Version control &amp; CI/CD</text>
+    
+    <use href="#storage-icon" x="20" y="145" width="24" height="24"/>
+    <text x="55" y="162" class="text" font-size="12">Storage - Cluster disk management</text>
+    
+    <use href="#workflow-icon" x="20" y="180" width="24" height="20"/>
+    <text x="55" y="195" class="text" font-size="12">Parallel Works - Workflow platform</text>
+    
+    <text x="55" y="230" class="text" font-size="12">OpenShift/Kubernetes - Orchestration</text>
+  </g>
+  
+  <!-- File Types Legend -->
+  <g transform="translate(50, 1430)">
+    <rect x="0" y="0" width="220" height="160" rx="5" fill="#F0F0F0" stroke="#999" stroke-width="1"/>
+    <text x="110" y="25" class="text" text-anchor="middle" font-weight="bold">File Types</text>
+    
+    <use href="#tar-icon" x="20" y="45" width="20" height="20"/>
+    <text x="50" y="58" class="text" font-size="12">TAR - Archive format</text>
+    
+    <use href="#sif-icon" x="20" y="75" width="20" height="22"/>
+    <text x="50" y="90" class="text" font-size="12">SIF - Singularity image</text>
+    
+    <use href="#registry-icon" x="20" y="105" width="20" height="20"/>
+    <text x="50" y="120" class="text" font-size="12">Registry - Package storage</text>
+  </g>
+  
+  <!-- Repos List -->
+  <g transform="translate(50, 1080)">
+    <rect x="0" y="0" width="220" height="160" rx="5" fill="#E8F0FF" stroke="#2E86AB" stroke-width="1"/>
+    <text x="110" y="25" class="text" text-anchor="middle" font-weight="bold">Repository Structure</text>
+    <text x="10" y="50" class="text" font-size="12">• NGEN (Core)</text>
+    <text x="10" y="70" class="text" font-size="12">• Account Manager</text>
+    <text x="10" y="90" class="text" font-size="12">• Forecast Manager</text>
+    <text x="10" y="110" class="text" font-size="12">• NWM Verf</text>
+    <text x="10" y="130" class="text" font-size="12">• UI / Server Components</text>
+  </g>
+</svg>

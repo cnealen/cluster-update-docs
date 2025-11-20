@@ -1,0 +1,28 @@
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.orig
+
+# Generated files
+*.log
+.cache/
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# SVG editor temp files
+*.svg~
+*.autosave.svg
+
+# Don't ignore the actual diagram
+!docs/cluster_update_process.svg
